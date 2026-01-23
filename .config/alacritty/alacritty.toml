@@ -1,1 +1,22 @@
+import = [
+  "~/.config/alacritty/themes/themes/coolnight.toml"
+]
 
+[env]
+TERM = "xterm-256color"
+
+[window]
+padding.x = 0
+padding.y = 0
+
+decorations = "Buttonless"
+
+opacity = 1
+blur = false 
+
+option_as_alt = "Both"
+
+[font]
+normal.family = "0xProto Nerd Font"
+
+size = 12
