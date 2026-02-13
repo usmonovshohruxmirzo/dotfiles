@@ -32,8 +32,6 @@ export PATH=$HOME/dotnet:$PATH
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH=$PATH:/opt/nvim-linux-x86_64/bin
 
-if command -v tmux &> /dev/null; then
-  if [ -z "$TMUX" ]; then
-    tmux attach -t main || tmux new -s main
-  fi
+if [[ $- == *i* ]] && command -v tmux &> /dev/null && [[ -z "$TMUX" ]]; then
+  exec tmux new-session -A -s main
 fi
