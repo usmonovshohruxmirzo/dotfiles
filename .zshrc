@@ -7,8 +7,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 CASE_SENSITIVE="true"
 HYPHEN_INSENSITIVE="true"
-zstyle ':omz:update' mode auto
 ENABLE_CORRECTION="true"
+zstyle ':omz:update' mode auto
 
 plugins=(
   git
@@ -17,11 +17,6 @@ plugins=(
   z
   history
 )
-
-alias storage='source ~/storage.sh'
-alias cls='clear'
-alias bat='batcat'
-alias f='fzf --preview "batcat --style=numbers --color=always {}"'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -32,6 +27,21 @@ export PATH=$HOME/dotnet:$PATH
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH=$PATH:/opt/nvim-linux-x86_64/bin
 
+unalias ls 2>/dev/null
+alias ls='eza --icons'
+alias ll='eza -lah --icons'
+alias la='eza -a --icons'
+alias lt='eza --tree --icons'
+alias lg='eza -lah --git --icons'
+
+alias cd='z'
+alias storage='source ~/storage.sh'
+alias cls='clear'
+alias bat='batcat'
+alias f='fzf --preview "batcat --style=numbers --color=always {}"'
+
+eval "$(zoxide init zsh)"
+
 if [[ $- == *i* ]] && command -v tmux &> /dev/null && [[ -z "$TMUX" ]]; then
-  exec tmux new-session -A -s main
+  tmux attach -t main || tmux new -s main
 fi
