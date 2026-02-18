@@ -40,8 +40,6 @@ alias cls='clear'
 alias bat='batcat'
 alias f='fzf --preview "batcat --style=numbers --color=always {}"'
 
-eval "$(zoxide init zsh)"
+alias t='tmux'
 
-if [[ $- == *i* ]] && command -v tmux &> /dev/null && [[ -z "$TMUX" ]]; then
-  tmux attach -t main || tmux new -s main
-fi
+eval "$(zoxide init zsh)"
