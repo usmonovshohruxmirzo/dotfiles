@@ -22,9 +22,12 @@ source $ZSH/oh-my-zsh.sh
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-export DOTNET_ROOT=$HOME/dotnet
-export PATH=$HOME/dotnet:$PATH
-export PATH="$PATH:$HOME/.dotnet/tools"
+export DOTNET_ROOT=$HOME/.dotnet
+export PATH=$DOTNET_ROOT:$PATH
+export PATH=$PATH:$HOME/.dotnet/tools
+export NUGET_PACKAGES=$HOME/.nuget/packages
+export NUGET_HTTP_CACHE_PATH=$HOME/.local/share/NuGet/http-cache
+
 export PATH=$PATH:/opt/nvim-linux-x86_64/bin
 
 unalias ls 2>/dev/null
@@ -41,5 +44,16 @@ alias bat='batcat'
 alias f='fzf --preview "batcat --style=numbers --color=always {}"'
 
 alias t='tmux'
+alias p='poweroff'
+alias desk='cd Desktop'
+alias res='sudo reboot'
+alias top='bpytop'
+alias lock='loginctl lock-session'
+
+alias dinfo='~/dotnet-info.sh'
 
 eval "$(zoxide init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
