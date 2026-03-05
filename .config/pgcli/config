@@ -191,19 +191,24 @@ completion-menu.completion = 'bg:#008888 #ffffff'
 completion-menu.meta.completion.current = 'bg:#44aaaa #000000'
 completion-menu.meta.completion = 'bg:#448888 #ffffff'
 completion-menu.multi-column-meta = 'bg:#aaffff #000000'
+
 scrollbar.arrow = 'bg:#003333'
 scrollbar = 'bg:#00aaaa'
 selected = '#ffffff bg:#6666aa'
 search = '#ffffff bg:#4444aa'
 search.current = '#ffffff bg:#44aa44'
-bottom-toolbar = 'bg:#222222 #aaaaaa'
-bottom-toolbar.off = 'bg:#222222 #888888'
-bottom-toolbar.on = 'bg:#222222 #ffffff'
+
+bottom-toolbar = '#ffffff nobold'
+bottom-toolbar.off = '#ffffff nobold'
+bottom-toolbar.on = '#ffffff nobold'
+
 search-toolbar = 'noinherit bold'
 search-toolbar.text = 'nobold'
 system-toolbar = 'noinherit bold'
+
 arg-toolbar = 'noinherit bold'
 arg-toolbar.text = 'nobold'
+
 bottom-toolbar.transaction.valid = 'bg:#222222 #00ff5f bold'
 bottom-toolbar.transaction.failed = 'bg:#222222 #ff005f bold'
 # These three values can be used to further refine the syntax highlighting.
@@ -214,7 +219,7 @@ bottom-toolbar.transaction.failed = 'bg:#222222 #ff005f bold'
 # keyword = 'bold #008000'
 
 # style classes for colored table output
-output.header = "#00ff5f bold"
+output.header = "#98c379 bold"
 output.odd-row = ""
 output.even-row = ""
 output.null = "#808080"
