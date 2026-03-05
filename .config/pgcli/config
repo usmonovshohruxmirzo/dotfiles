@@ -110,7 +110,7 @@ search_path_filter = False
 # Default pager. See https://www.pgcli.com/pager for more information on settings.
 # By default 'PAGER' environment variable is used. If the pager is less, and the 'LESS'
 # environment variable is not set, then LESS='-SRXF' will be automatically set.
-# pager = less
+#pager = less
 
 # Timing of sql statements and table rendering.
 timing = True
@@ -173,7 +173,7 @@ prompt = '\x1b[35m\u@\x1b[32m\h:\x1b[36m\d>'
 min_num_menu_lines = 4
 
 # Character used to left pad multi-line queries to match the prompt size.
-multiline_continuation_char = ''
+multiline_continuation_char = ' '
 
 # The string used in place of a null value.
 null_string = '<null>'
