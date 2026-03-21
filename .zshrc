@@ -33,8 +33,12 @@ export PATH=$PATH:$HOME/.dotnet/tools
 export NUGET_PACKAGES=$HOME/.nuget/packages
 export NUGET_HTTP_CACHE_PATH=$HOME/.local/share/NuGet/http-cache
 
+ulimit -n 8192
+
 # Editor Tools
 export PATH=$PATH:/opt/nvim-linux-x86_64/bin
+export EDITOR=nvim
+export VISUAL=nvim
 
 # File Navigation + Terminal Utilities
 unalias ls 2>/dev/null
@@ -58,10 +62,14 @@ alias f='fzf --preview "batcat --style=numbers --color=always {}"'
 # System Control
 alias t='tmux'
 alias p='poweroff'
+alias qa='exit'
 alias res='sudo reboot'
 alias top='bpytop'
 alias lock='loginctl lock-session'
 alias desk='cd ~/Desktop'
+alias ping='gping'
+alias ip='hostname -I'
+alias sys='fastfetch'
 
 # Cleanup Shortcuts
 alias ct='rm -rf ~/.local/share/Trash/*'
@@ -72,16 +80,40 @@ alias di='~/dotnet-info.sh'
 alias dnr='dotnet run'
 alias dnb='dotnet build'
 alias dnt='dotnet test'
+alias dnf='dotnet format'
 alias dnrst='dotnet restore'
 alias dnc='dotnet clean'
-
+alias dnew='dotnet new'
+alias dnw='dotnet watch'
 alias dncrb='dnc && dnrst && dnb'
+
+alias efadd='dotnet ef migrations add'
+alias efremove='dotnet ef migrations remove'
+alias efupdate='dotnet ef database update'
+alias eflist='dotnet ef migrations list'
+
+# Python Shortcuts
+alias py='python3'
+
+# JavaScript Shortcuts
+alias nrun='npm run dev'
+alias ntest='npm run test'
+alias nbuild='npm run build'
+alias nformat='npm run format'
+alias nlint='npm run lint'
+
+# pgcli
+alias pg='pgcli'
+
+# ZSH
+alias uzsh='source ~/.zshrc'
 
 # Productivity Tools
 eval "$(zoxide init zsh)"
 
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
+
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
