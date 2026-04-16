@@ -76,7 +76,7 @@ alias ct='rm -rf ~/.local/share/Trash/*'
 alias cdl='rm -rf ~/Downloads/*'
 
 # .NET Shortcuts
-alias di='~/dotnet-info.sh'
+alias di='~/mnt/Storage/Scripts/dotnet-info.sh'
 alias dnr='dotnet run'
 alias dnb='dotnet build'
 alias dnt='dotnet test'
@@ -103,10 +103,11 @@ alias nformat='npm run format'
 alias nlint='npm run lint'
 
 # pgcli
-alias pg='pgcli'
+alias pg='pgcli -U postgres'
 
 # ZSH
-alias uzsh='source ~/.zshrc'
+alias uzsh='source ~/.config/zsh/.zshrc'
+alias ozsh='nvim ~/.config/zsh/.zshrc'
 
 # Productivity Tools
 eval "$(zoxide init zsh)"
@@ -117,3 +118,6 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# To customize prompt, run `p10k configure` or edit ~/.config/zsh/.p10k.zsh.
+[[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
