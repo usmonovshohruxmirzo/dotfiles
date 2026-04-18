@@ -12,14 +12,17 @@ HYPHEN_INSENSITIVE="true"
 ENABLE_CORRECTION="true"
 
 zstyle ':omz:update' mode auto
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # Plugins
 plugins=(
   git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
   z
   history
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -49,15 +52,13 @@ alias la='eza -a --icons'
 alias lt='eza --tree --icons'
 alias lg='eza -lah --git --icons'
 
-alias cd='z'
-
 alias storage='cd /mnt/Storage || { echo "Directory not found"; }'
 alias books='cd /mnt/Storage/Books || { echo "Directory not found"; }'
 
 alias cls='clear'
 alias bat='batcat'
 
-alias f='fzf --preview "batcat --style=numbers --color=always {}"'
+alias f='fzf --preview "bat --style=numbers --color=always {}"'
 
 # System Control
 alias t='tmux'
