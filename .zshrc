@@ -39,9 +39,10 @@ export NUGET_HTTP_CACHE_PATH=$HOME/.local/share/NuGet/http-cache
 ulimit -n 8192
 
 # Editor Tools
-export PATH=$PATH:/opt/nvim-linux-x86_64/bin
-export EDITOR=nvim
-export VISUAL=nvim
+export PATH=$PATH:/opt/nvim-linux-x86_64/bin # nvim 0.11.6
+export PATH="$HOME/.config/emacs/bin:$PATH"
+export EDITOR=vim
+export VISUAL=vim
 
 # File Navigation + Terminal Utilities
 unalias ls 2>/dev/null
@@ -53,31 +54,35 @@ alias lt='eza --tree --icons'
 alias lg='eza -lah --git --icons'
 
 alias storage='cd /mnt/Storage || { echo "Directory not found"; }'
+alias codebase='cd /mnt/Storage/Codebase || { echo "Directory not found"; }'
 alias books='cd /mnt/Storage/Books || { echo "Directory not found"; }'
 
 alias cls='clear'
-alias bat='batcat'
 
 alias f='fzf --preview "bat --style=numbers --color=always {}"'
 
 # System Control
+alias sys='\fastfetch'
 alias t='tmux'
 alias p='poweroff'
 alias qa='exit'
 alias res='sudo reboot'
-alias top='bpytop'
+alias top='btop'
+alias journalctl='lazyjournal'
+alias calc='qalc'
 alias lock='loginctl lock-session'
 alias desk='cd ~/Desktop'
+alias dw='cd ~/Downloads'
 alias ping='gping'
 alias ip='hostname -I'
-alias sys='fastfetch'
+alias emacs="emacs -nw"
 
 # Cleanup Shortcuts
 alias ct='rm -rf ~/.local/share/Trash/*'
 alias cdl='rm -rf ~/Downloads/*'
 
 # .NET Shortcuts
-alias di='~/mnt/Storage/Scripts/dotnet-info.sh'
+alias di='/mnt/Storage/Scripts/dotnet/dotnet-info.sh'
 alias dnr='dotnet run'
 alias dnb='dotnet build'
 alias dnt='dotnet test'
@@ -116,6 +121,8 @@ eval "$(zoxide init zsh)"
 # Node Version Manager
 export NVM_DIR="$HOME/.nvm"
 
+# Go
+export PATH="$PATH:$(go env GOPATH)/bin"
 
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
